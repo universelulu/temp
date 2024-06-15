@@ -21,7 +21,7 @@ pipeline{
   }
   post{
       always{
-        bat 'java -cp C:/ProgramData/Jenkins/.jenkins/workspace/temps/target/homework2-0.0.1-SNAPSHOT.jar homework2.PerformanceTest > output.txt'
+        bat 'java -Dfile.encoding=UTF-8 -cp C:/ProgramData/Jenkins/.jenkins/workspace/temps/target/homework2-0.0.1-SNAPSHOT.jar homework2.PerformanceTest > output.txt'
       }
   }
 }
