@@ -19,10 +19,8 @@ pipeline{
       }
     }
   }
-
-  post{
-    always{
-      bat 'java -cp C:/ProgramData/Jenkins/.jenkins/workspace/temp pipeline/target/homework2-0.0.1-SNAPSHOT.jar homework2.PerformanceTest > output.txt'
-    }
-  }
 }
+
+
+  
+
