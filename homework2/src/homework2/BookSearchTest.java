@@ -9,8 +9,8 @@ class BookSearchTest {
 	@Test
 	void testSearch_bs() {
 		Book[] bookArray = {
-				new Book(,"잠 못드는 밤"),
-				new Book(,"한 여름밤의 꿈"),
+				new Book(1,"잠 못드는 밤"),
+				new Book(2,"한 여름밤의 꿈"),
 				new Book(3,"잘자요 굿나잇"),
 				new Book(4,"뉴페이스"),
 				new Book(5,"라라라")
