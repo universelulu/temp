@@ -3,27 +3,24 @@ pipeline{
 
   tools{
     maven 'maven-3.9.7'
-    jdk 'JDK-17'
+    jdk 'JDK-1.8'
   }
   
   stages{
-    stage('Checkout SCM') {
+    stage('Checkout') {
             steps {
-                checkout([$class: 'GitSCM', 
-                          branches: [[name: 'master']], 
-                          userRemoteConfigs: [[credentialsId: 'temp', 
-                                                url: 'https://github.com/universelulu/temp.git']]])
+                checkout scm
             }
         }
     stage('Build'){
       steps{
-        bat 'mvn compile package'
+        bat 'mvn clean package'
       }
     }
   }
   post{
       always{
-        bat 'java -Dfile.encoding=UTF-8 -cp C:/ProgramData/Jenkins/.jenkins/workspace/temps/target/homework2-0.0.1-SNAPSHOT.jar homework2.PerformanceTest > output.txt 2>&1'
+        bat 'java -cp C:/ProgramData/Jenkins/.jenkins/workspace/temps/target/homework2-0.0.1-SNAPSHOT.jar homework2.PerformanceTest > output.txt'
       }
   }
 }
