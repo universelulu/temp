@@ -7,22 +7,26 @@ pipeline{
   }
   
   stages{
-    stage('Checkout'){
-      steps{
-        // 소스코드 체크 아웃
-        checkout scm
-      }
-    }
+    stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
     stage('Build'){
       steps{
         bat 'mvn clean package'
       }
     }
   }
-
   post{
-    success{
-      bat 'java -cp C:/ProgramData/Jenkins/.jenkins/workspace/temp pipeline/target/homework2-0.0.1-SNAPSHOT.jar homework2.PerformanceTest > output.txt'
-    }
+      always{
+        bat 'java -cp C:/ProgramData/Jenkins/.jenkins/workspace/temps/target/homework2-0.0.1-SNAPSHOT.jar homework2.PerformanceTest > output.txt'
+      }
   }
 }
+  
+
+
+
+  
+
