@@ -18,7 +18,11 @@ pipeline{
         bat 'mvn clean package'
       }
     }
+    post{
+      success{
+        bat 'java -cp C:/ProgramData/Jenkins/.jenkins/workspace/temps/target/homework2-0.0.1-SNAPSHOT.jar homework2.PerformaceTest > output.txt'
   }
+  
 }
 
 
