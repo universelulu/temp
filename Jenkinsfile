@@ -7,12 +7,14 @@ pipeline{
   }
   
   stages{
-    stage('Checkout'){
-      steps{
-        // 소스코드 체크 아웃
-        checkout scm
-      }
-    }
+    stage('Checkout SCM') {
+            steps {
+                checkout([$class: 'GitSCM', 
+                          branches: [[name: 'master']], 
+                          userRemoteConfigs: [[credentialsId: 'temp', 
+                                                url: 'https://github.com/universelulu/temp.git']]])
+            }
+        }
     stage('Build'){
       steps{
         bat 'mvn compile package'
