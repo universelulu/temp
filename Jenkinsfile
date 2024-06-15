@@ -9,6 +9,7 @@ pipeline{
   stages{
     stage('Checkout'){
       steps{
+        // 소스코드 체크 아웃
         checkout scm
       }
     }
