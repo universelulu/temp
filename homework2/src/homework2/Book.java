@@ -5,7 +5,7 @@ public class Book {
 	private int id;
 	private String title;
 	
-	public Book(int id, String title) // Book 클래스 생성자
+	public Book(int id, String title) 
 	{
 		this.id = id;
 		this.title = title;
@@ -21,7 +21,7 @@ public class Book {
 		return title;
 	}
 	
-	public String toString()
+	public String toString() 
 	{
 		return "{id: "+ id + ", title: " + title + "}";
 	}

@@ -8,6 +8,7 @@ class BookSearchTest {
 
 	@Test
 	void testSearch_bs() {
+		
 		Book[] bookArray = {
 				new Book(1,"잠 못드는 밤"),
 				new Book(2,"한 여름밤의 꿈"),
